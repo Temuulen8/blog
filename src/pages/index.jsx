@@ -1,13 +1,13 @@
 import Content from "@/components/content/content";
-import LatestPost from "@/components/latesPost/latestPost";
-import TrendingPost from "@/components/trendingPost";
+import Posts from "@/components/posts/posts";
+import TrendingPost from "@/components/trending";
 
 export default function Home() {
   return (
     <>
       <Content />
       <TrendingPost />
-      <LatestPost />
+      <Posts />
     </>
   );
 }

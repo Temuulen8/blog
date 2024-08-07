@@ -1,18 +1,25 @@
+import Link from "next/link";
 import React from "react";
 
-const PostCards = ({ postCardImg, category, postCardText, date }) => {
+const PostCard = ({ postCardImg, category, postCardText, date }) => {
   return (
-    <div className="w-[392px] h-[476px] rounded-xl">
-      <img
-        src={postCardImg}
-        alt=""
-        className="w-[360px] h-[240px] rounded-xl"
-      />
-      <p className="font-medium text-sm text-[#4B6BFB]">{category}</p>
+    // <Link href={"/blog/" + article.id}>
+    <div className="w-[392px] h-[476px] rounded-xl border flex flex-col gap-3 px-4 py-5">
+      <div className="flex justify-center">
+        <img
+          src={postCardImg}
+          alt=""
+          className="w-[360px] h-[240px] rounded-sm"
+        />
+      </div>
+      <p className="font-medium text-sm text-[#4B6BFB] bg-[#4B6BFB0D] rounded-lg w-14 flex justify-center">
+        {category}
+      </p>
       <p className="font-semibold text-2xl">{postCardText}</p>
       <p className="text-base font-normal text-[#97989F]">{date}</p>
     </div>
+    // </Link>
   );
 };
 
-export default PostCards;
+export default PostCard;

@@ -1,18 +1,7 @@
 import React from "react";
-import PostCards from "./postCards";
+import PostCard from "./postCards";
 
-const postCardsList = [
-  {
-    postCardImg:
-      "https://s3-alpha-sig.figma.com/img/3abf/26dd/585632b9d05dcfd0daffacedd55842f5?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=N-SvH~z-mGLp~6yzyAcLXyM0ZLQDdurTguok8IU7e6t-8bVXldStP5ZvHQVizoJI2PbNKnF97u~5r7OaKWPliYNVuPgj6uv-dwzbO35pp8jAKECiDeJ6z9PFZtgvQtjJf~uR3i4GU5SOj2BSmjKS3IqO24xW2MKu6ye2~OVevqRBv7LpPJ7RrW5nydfVTa~aQWt9~54gByB9hFNCQDJAx8IUQg9hFIGdRpFuW13Ssp1rSm~Dc~Nsot387YbNX~0POxjlzS6x3vN-OiEzP~qZm6-nq~CiwVGTq~F0F6B6-uOfXDc1Fz~9df2iEUC6ZBe6~nwdCrZSly1V1Z6ezbm6pA__",
-    category: "Technology",
-    postCardText:
-      "The Impact of Technology on the Workplace: How Technology is Changing",
-    date: "August 20, 2022",
-  },
-];
-
-const Posts = () => {
+const Posts = ({ articles }) => {
   return (
     <>
       <div className="">
@@ -30,7 +19,16 @@ const Posts = () => {
           </ul>
           <p className="text-xs">Wiev All</p>
         </div>
-        <PostCards />
+        <div className="flex flex-wrap justify-center px-60 gap-3">
+          {articles.map((art) => (
+            <PostCard
+              postCardImg={art.social_image}
+              category={art.type_of}
+              postCardText={art.title}
+              date={art.readable_publish_date}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

@@ -1,12 +1,4 @@
 import React from "react";
-<<<<<<< Updated upstream
-
-const Blog = () => {
-  return <div>Blog</div>;
-};
-
-export default Blog;
-=======
 import LatestPost from "../../comp/latesPost/latestPost";
 
 const blog = () => {
@@ -14,4 +6,3 @@ const blog = () => {
 };
 
 export default blog;
->>>>>>> Stashed changes

@@ -1,8 +1,21 @@
 import React from "react";
-import LatestPost from "../../comp/latesPost/latestPost";
+import Posts from "@/components/posts/posts";
+import { useEffect, useState } from "react";
 
-const blog = () => {
-  return <LatestPost />;
+const Blog = () => {
+  const [articles, setArticles] = useState([]);
+
+  const getArticles = async () => {
+    const res = await fetch("https://dev.to/api/articles");
+    const data = await res.json();
+    setArticles(data);
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
+
+  return <Posts articles={articles} />;
 };
 
-export default blog;
+export default Blog;

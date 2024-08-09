@@ -7,9 +7,9 @@ const Header = () => {
           <img className="w-[158px] h-[38px]" src="./images/logo.png" alt="" />
         </div>
         <div className="flex gap-10">
-          <a href="#home">Home</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Contact</a>
         </div>
         <div className="bg-[#F4F4F5] flex items-center p-2 rounded-md">
           <input

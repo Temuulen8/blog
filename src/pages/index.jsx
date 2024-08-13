@@ -1,9 +1,11 @@
 import Content from "@/components/content/content";
 import Posts from "@/components/posts/posts";
 import TrendingPost from "@/components/trending";
-import { useEffect, useState } from "react";
+import { SearchContext } from "@/provider/provider";
+import { useContext, useEffect, useState } from "react";
 
 export default function Home() {
+  const { searchValue } = useContext(SearchContext);
   const [articles, setArticles] = useState([]);
 
   const getArticles = async () => {
@@ -16,11 +18,16 @@ export default function Home() {
     getArticles();
   }, []);
 
+  const findArticles = articles.filter((article) =>
+    article.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   return (
     <>
+      <h2 className="flex justify-center">хайлт: {searchValue}</h2>
       <Content />
       <TrendingPost />
-      <Posts articles={articles} />
+      <Posts articles={findArticles} />
     </>
   );
 }

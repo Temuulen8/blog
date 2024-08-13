@@ -4,22 +4,22 @@ import PostCard from "./postCards";
 const Posts = ({ articles }) => {
   return (
     <>
-      <div className="m-[100px]">
-        <h1 className="font-bold text-2xl pl-5 container m-auto">
-          All Blog Post
-        </h1>
-        <div className="container m-auto flex justify-between items-center p-5">
-          <ul className="text-xs flex gap-5">
-            <li>All</li>
-            <li>Design</li>
-            <li>Travel</li>
-            <li>Fashion</li>
-            <li>Technology</li>
-            <li>Branding</li>
-          </ul>
-          <p className="text-xs">Wiev All</p>
+      <div className="flex flex-col items-center gap-8 mt-8">
+        <div>
+          <h1 className="font-bold text-2xl ">All Blog Post</h1>
+          <div className="flex gap-[810px] ">
+            <ul className="text-xs flex gap-5">
+              <li>All</li>
+              <li>Design</li>
+              <li>Travel</li>
+              <li>Fashion</li>
+              <li>Technology</li>
+              <li>Branding</li>
+            </ul>
+            <p className="text-xs">Wiev All</p>
+          </div>
         </div>
-        <div className="flex flex-wrap justify-center px-30 gap-3">
+        <div className="grid grid-cols-3 w-[1216px]">
           {articles.map((art) => (
             <PostCard
               postCardImg={art.social_image}

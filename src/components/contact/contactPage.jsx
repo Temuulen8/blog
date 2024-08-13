@@ -5,7 +5,7 @@ import ContactForm from "./contactForm";
 const ContactPage = () => {
   return (
     <>
-      <div className="flex flex-col items-center gap-5 p-28">
+      <div className="flex flex-col items-center gap-5 p-[100px]">
         <div className="flex flex-col gap-5">
           <h1 className="text-4xl font-semibold">Contact us</h1>
           <p className="w-[624px] h-[103px] text-[#696A75]">

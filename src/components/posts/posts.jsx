@@ -4,7 +4,7 @@ import PostCard from "./postCards";
 const Posts = ({ articles }) => {
   return (
     <>
-      <div className="">
+      <div className="m-[100px]">
         <h1 className="font-bold text-2xl pl-5 container m-auto">
           All Blog Post
         </h1>
@@ -19,7 +19,7 @@ const Posts = ({ articles }) => {
           </ul>
           <p className="text-xs">Wiev All</p>
         </div>
-        <div className="flex flex-wrap justify-center px-60 gap-3">
+        <div className="flex flex-wrap justify-center px-30 gap-3">
           {articles.map((art) => (
             <PostCard
               postCardImg={art.social_image}
@@ -28,6 +28,11 @@ const Posts = ({ articles }) => {
               date={art.readable_publish_date}
             />
           ))}
+        </div>
+        <div className="flex justify-center">
+          <button className="w-[123px] h-[48px] border rounded-md mt-[100px]">
+            Load More
+          </button>
         </div>
       </div>
     </>

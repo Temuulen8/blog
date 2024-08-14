@@ -1,7 +1,7 @@
 const TrendPostCard = ({ imgUrl, tPostText }) => {
   return (
     <div
-      className="relative rounded-xl w-[293px] h-[320px] bg-blend-darken gradient"
+      className="relative rounded-xl w-[370px] h-[320px] bg-blend-darken gradient"
       style={{
         backgroundImage: `url(${imgUrl})`,
         backgroundSize: "cover",

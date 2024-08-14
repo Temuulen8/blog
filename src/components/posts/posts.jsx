@@ -1,13 +1,14 @@
 import React from "react";
 import PostCard from "./postCards";
+import Link from "next/link";
 
 const Posts = ({ articles }) => {
   return (
     <>
       <div className="flex flex-col items-center gap-8 mt-8">
-        <div>
+        <div className="flex flex-col gap-5">
           <h1 className="font-bold text-2xl ">All Blog Post</h1>
-          <div className="flex gap-[810px] ">
+          <div className="flex gap-[1150px] ">
             <ul className="text-xs flex gap-5">
               <li>All</li>
               <li>Design</li>
@@ -19,14 +20,16 @@ const Posts = ({ articles }) => {
             <p className="text-xs">Wiev All</p>
           </div>
         </div>
-        <div className="grid grid-cols-3 w-[1216px]">
+        <div className="grid grid-cols-3 gap-5 ">
           {articles.map((art) => (
-            <PostCard
-              postCardImg={art.social_image}
-              category={art.type_of}
-              postCardText={art.title}
-              date={art.readable_publish_date}
-            />
+            <Link href={`/${art.id}`}>
+              <PostCard
+                postCardImg={art.social_image}
+                category={art.type_of}
+                postCardText={art.title}
+                date={art.readable_publish_date}
+              />
+            </Link>
           ))}
         </div>
         <div className="flex justify-center">

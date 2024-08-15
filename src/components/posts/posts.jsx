@@ -33,7 +33,7 @@ const Posts = ({ articles }) => {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="w-[123px] h-[48px] border rounded-md mt-[100px]">
+          <button className="w-[123px] h-[48px] border rounded-md my-[100px]">
             Load More
           </button>
         </div>

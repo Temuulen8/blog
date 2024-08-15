@@ -1,27 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+import Cariousel from "../carousel";
+
+const slides = ["bg-blue-400", "bg-teal-400", "bg-violet-400", "bg-orange-400"];
 
 const Slider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <>
       <div className="my-[100px]">
-        <div className="container m-auto h-[651px] bg-[url('/images/techdev.jpeg')] rounded-xl bg-cover bg-center p-3 flex items-end pb-10">
-          <div className="h-[50%] w-[50%] bg-white rounded-xl p-10 border">
-            <span className="text-white text-[14px] bg-[#4B6BFB] py-1 px-3 rounded-md">
-              Technology
-            </span>
-            <p className="text-[38px] font-bold">
-              Grid system for better Design User Interface
-            </p>
-            <p className="text-[#97989F]">August 20, 2022</p>
-          </div>
+        <div className="m-auto h-[600px] w-[1550px] bg-violet-50 overflow-hidden">
+          <Cariousel currentIndex={currentIndex} slides={slides} />
         </div>
         <div className="flex gap-2 container m-auto justify-end mt-3">
-          <button className="border border-black p-4 rounded">
+          <button
+            className="border border-black p-4 rounded"
+            onClick={() => {
+              setCurrentIndex(currentIndex - 1);
+            }}
+          >
             <GrPrevious />
           </button>
-          <button className="border border-black p-4 rounded">
+          <button
+            className="border border-black p-4 rounded"
+            onClick={() => {
+              setCurrentIndex(currentIndex + 1);
+            }}
+          >
             <GrNext />
           </button>
         </div>

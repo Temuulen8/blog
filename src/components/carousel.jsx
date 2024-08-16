@@ -6,8 +6,11 @@ const Cariousel = ({ slides, currentIndex }) => {
       className="flex h-full transition-all duration-150"
       style={{ transform: `translateX(-${currentIndex * 100}%)` }}
     >
-      {slides.map((color, i) => (
-        <div className={`min-w-full h-full ${color}`}></div>
+      {slides.map((slide) => (
+        <div className={`min-w-full h-full `}>
+          <img src={slide.image} alt="" />
+          <p>{slide.text}</p>
+        </div>
       ))}
     </div>
   );

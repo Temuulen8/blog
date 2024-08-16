@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 import Cariousel from "../carousel";
+``;
 
-const slides = ["bg-blue-400", "bg-teal-400", "bg-violet-400", "bg-orange-400"];
+const slides = [
+  { image: "./images/techdev.jpeg", text: "" },
+  { image: "./images/Logo.png", text: "" },
+  { image: "./images/mainLogo.png", text: "" },
+  { image: "./images/mainLogo.png", text: "" },
+];
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +23,11 @@ const Slider = () => {
           <button
             className="border border-black p-4 rounded"
             onClick={() => {
-              setCurrentIndex(currentIndex - 1);
+              if (currentIndex <= 0) {
+                setCurrentIndex(slides.length - 1);
+              } else {
+                setCurrentIndex(currentIndex - 1);
+              }
             }}
           >
             <GrPrevious />
@@ -25,7 +35,11 @@ const Slider = () => {
           <button
             className="border border-black p-4 rounded"
             onClick={() => {
-              setCurrentIndex(currentIndex + 1);
+              if (currentIndex >= slides.length - 1) {
+                setCurrentIndex(0);
+              } else {
+                setCurrentIndex(currentIndex + 1);
+              }
             }}
           >
             <GrNext />

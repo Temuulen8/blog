@@ -5,18 +5,18 @@ import Cariousel from "../carousel";
 ``;
 
 const slides = [
-  { image: "./images/techdev.jpeg", text: "" },
-  { image: "./images/Logo.png", text: "" },
-  { image: "./images/mainLogo.png", text: "" },
-  { image: "./images/mainLogo.png", text: "" },
+  { image: "./images/content.png", text: "" },
+  { image: "./images/content.png", text: "" },
+  { image: "./images/content.png", text: "" },
+  { image: "./images/content.png", text: "" },
 ];
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <>
-      <div className="my-[100px]">
-        <div className="m-auto h-[600px] w-[1550px] bg-violet-50 overflow-hidden">
+      <div className="container m-auto flex justify-between flex-col items-center p-5">
+        <div className=" bg-violet-50 overflow-hidden">
           <Cariousel currentIndex={currentIndex} slides={slides} />
         </div>
         <div className="flex gap-2 container m-auto justify-end mt-3">
